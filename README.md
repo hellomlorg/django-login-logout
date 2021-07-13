@@ -5,7 +5,7 @@ In this project, we implement a simple user authentication system by using the D
 3. Logout
 4. Dynamic Home Page 
 
-For more details on this, you can check out our [blog post]() on [hello ML](https://helloml.org). 
+For more details on this, you can check out our [blog post](https://helloml.org/implementing-a-user-registration-system-in-django-sign-up-login-and-logout/) on [hello ML](https://helloml.org). 
 
 ## Instructions to use
 1. Clone the repo. 
