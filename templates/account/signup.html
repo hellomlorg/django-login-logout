@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign up{% endblock title%}
+
+{% block content %}
+<div class="container my-4 bg pb-5">
+    <div class="row justify-content-center ">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Sign up</h3>
+                    <form method="post" action='{% url 'handlesignup' %}'>
+                        <div class="form-group">
+                            <label for="uname">Username</label>
+                            <input type="text" class="form-control" id="uname" placeholder="Enter your Name"
+                                name="uname" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">First Name</label>
+                            <input type="text" class="form-control" id="fname" placeholder="Enter your First Name"
+                                name="fname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Last Name</label>
+                            <input type="text" class="form-control" id="lname" placeholder="Enter your Last Name"
+                                name="lname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your Email"
+                                name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Choose a password</label>
+                            <input type="password" class="form-control" id="password1" placeholder="Choose a password"
+                                name="password1" required>
+                        </div>
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="password2">Confirm password</label>
+                            <input type="password" class="form-control" id="password2"
+                                placeholder="Retype your password" name="password2" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2">SignUp</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
