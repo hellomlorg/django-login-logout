@@ -31,13 +31,13 @@ pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 ```
-5. Head to [localhos:8000](thttp://127.0.0.1:8000/) and you should be able to see the development version of our app live. 
+5. Head to [127.0.0.1:8000](http://127.0.0.1:8000/) and you should be able to see the development version of our app live. 
 
 ## Any Questions?
 Feel free to raise an issue. We'll try to answer this as soon as we can. 
 
 ## Contributing Guidelines
-If there is any valid issue, please raise and issue and feel free to create a pull request. We will review it and merge it to the main branch. 
+If there is any valid contribution, please raise an issue and feel free to create a pull request. We will review it and merge it to the main branch. 
 
 ## Author
 This README is contributed by [Vishnu S Reddy](https://helloml.org/author/vishnusreddy007/) and the code is contributed by [Dhruv Bothra](https://helloml.org/author/dhruvbothra/). 
