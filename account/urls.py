@@ -10,4 +10,6 @@ urlpatterns = [
     path('handlesignup/', views.handlesignup, name="handlesignup"),
     path('handlelogin/', views.handlelogin, name="handlelogin"),
     path('handlelogout/', views.handlelogout, name="handlelogout"),
+    path('changepass', views.ChangePassword.as_view(), name="changepass")
+
 ]
