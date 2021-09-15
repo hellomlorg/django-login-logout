@@ -1,9 +1,10 @@
 # django-login-logout
 In this project, we implement a simple user authentication system by using the Django ```auth``` module. This system can handle the below mentioned functionalities. 
-1. New user registration
+1. New user registration (sign up)
 2. User login
 3. Logout
-4. Dynamic Home Page 
+4. Change password for existing user
+5. Dynamic Home Page 
 
 For more details on this, you can check out our [blog post](https://helloml.org/implementing-a-user-registration-system-in-django-sign-up-login-and-logout/) on [hello ML](https://helloml.org). 
 
