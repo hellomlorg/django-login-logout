@@ -9,6 +9,7 @@
     {% if user.is_authenticated %}
     Hi {{ request.user }}!
     <p><a href="/handlelogout">Log Out</a></p>
+    <p><a href="/changepass">Change password</a></p>
     {% else %}
     <div class="row">
         <p class="col-md-3">You are not logged in</p>

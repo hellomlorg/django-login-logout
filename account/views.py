@@ -3,24 +3,36 @@ from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as dj_login
 from django.contrib.auth.models import User
 from django.contrib import messages
-# Create your views here.
+from django.views.generic import TemplateView
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
+# Global variable
+authenticated = False
 # view for rendering homepage
 
 
 def home(request):
     return render(request, "account/home.html")
 
+
 # view for rendering signup page
 
 
 def signup(request):
+    if authenticated:
+        return render(request, "account/home.html")
     return render(request, "account/signup.html")
 
 
 # view for rendering login page
 def login(request):
+    if authenticated:
+        return render(request, "account/home.html")
     return render(request, "account/login.html")
+
 
 # view for rendering data coming from signup page
 
@@ -83,16 +95,41 @@ def handlelogin(request):
         if user is not None:
             dj_login(request, user)
             messages.success(request, " Successfully logged in")
+            global authenticated
+            authenticated = True
             return redirect("/")
         else:
             messages.error(request, " Invalid Credentials, Please try again")
             return redirect("/")
     return HttpResponse('404 - NOT FOUND ')
 
+
 # view for rendering logout
-
-
+@login_required
 def handlelogout(request):
     logout(request)
     messages.success(request, " Successfully logged out")
+    global authenticated
+    authenticated = False
     return redirect('/')
+
+
+# view for rendering change password
+class ChangePassword(LoginRequiredMixin, TemplateView):
+    template_name = "account/passwordchange.html"
+
+    def post(self, request):
+        form = PasswordChangeForm(user=request.user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, user=request.user)
+            messages.success(request, "Changed Password successfully")
+            return redirect('/')
+        else:
+            for err in form.errors.values():
+                messages.error(request, err)
+            return redirect('/changepass')
+
+    def get(self, request):
+        form = PasswordChangeForm(user=request.user)
+        return render(request, self.template_name, {"form": form})
