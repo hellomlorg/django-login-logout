@@ -4,6 +4,8 @@ In this project, we implement a simple user authentication system by using the D
 2. User login
 3. Logout
 4. Dynamic Home Page 
+5. Change password for existing user
+6. Recommend secure password to user while signing up
 
 For more details on this, you can check out our [blog post](https://helloml.org/implementing-a-user-registration-system-in-django-sign-up-login-and-logout/) on [hello ML](https://helloml.org). 
 
@@ -40,4 +42,5 @@ Feel free to raise an issue. We'll try to answer this as soon as we can.
 If there is any valid contribution, please raise an issue and feel free to create a pull request. We will review it and merge it to the main branch. 
 
 ## Author
-This README is contributed by [Vishnu S Reddy](https://helloml.org/author/vishnusreddy007/) and the code is contributed by [Dhruv Bothra](https://helloml.org/author/dhruvbothra/). 
+This README is contributed by [Vishnu S Reddy](https://helloml.org/author/vishnusreddy007/) and the code is contributed by [Dhruv Bothra](https://helloml.org/author/dhruvbothra/) and [Ajit Singh](https://helloml.org/author/ajit_iiitg/). 
+ 

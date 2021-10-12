@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account', # You have to add this line
+    'account',
+    'passwordGenerator',
 ]
 
 MIDDLEWARE = [
