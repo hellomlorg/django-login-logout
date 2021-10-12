@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-{% block title %}login{% endblock title %}
+{% block title %}Login{% endblock title %}
 {% block content %}
 <div class="container my-5 w-50">
     <div class="card" style="padding:20px;">
-        <h1 class="display-6">Login</h1>
-        <form action="{% url 'handlelogin' %}" method="post">
+        <h1 class="display-6">Welcome Back!</h1>
+        <form action="{% url 'loginuser' %}" method="post">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="name" class="lead form-label">Username</label>
@@ -18,6 +18,8 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
+        <hr>
+        <p class="lead">Don't have an account yet? <a class="text-decoration-none" href="{% url 'signupuser' %}">Sign Up</a></p>
     </div>
 </div>
 
