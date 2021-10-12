@@ -6,6 +6,7 @@ In this project, we implement a simple user authentication system by using the D
 4. Dynamic Home Page 
 5. Change password for existing user
 6. Recommend secure password to user while signing up
+7. Dynamic profile page for each user - profile includes username, details, profile image and bio 
 
 For more details on this, you can check out our [blog post](https://helloml.org/implementing-a-user-registration-system-in-django-sign-up-login-and-logout/) on [hello ML](https://helloml.org). 
 
