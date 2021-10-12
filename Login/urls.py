@@ -16,8 +16,12 @@ Including another URLconf
 # Login/urls.py
 from django.contrib import admin
 from django.urls import path, include # Added include module
+from passwordGenerator import views
 
 urlpatterns = [
+    path('choosepassword', views.passhome, name='passhome'),
+    path('generatedpassword/', views.password, name='password'),
+
     path('admin/', admin.site.urls),
     path('', include('account.urls')), # Added account app
 
