@@ -2,8 +2,8 @@
 
 {% block css %}
 .form-class {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+display: grid;
+grid-template-columns: 1fr 1fr;
 }
 
 {% endblock %}
@@ -20,17 +20,32 @@
                     <div class="form-class">
                         <form class="lead mx-2" method="post" action="{% url 'signupuser' %}">
                             {% csrf_token %}
-                            First name: {{form.first_name}} <br><br>
-                            Last name: {{form.last_name}} <br><br>
-                            Username: {{ form.username }} <br><br>
-                            Email id: {{ form.email }} <br><br>
-                            Password: {{ form.password1 }} <br><br>
-                            (Confirm): {{ form.password2 }} <br><br>
+                            <div class="form-group mt-2 mb-2">
+                                First name: {{form.first_name}}
+                            </div>
+                            <div class="form-group mt-2 mb-2">
+                                Last name: {{form.last_name}}
+                            </div>
+                            <div class="form-group mt-2 mb-2">
+                                Username: {{ form.username }}
+                            </div>
+                            <div class="form-group mt-2 mb-2">
+                                Email id: {{ form.email }}
+                            </div>
+                            <div class="form-group mt-2 mb-2">
+                                Password: Enter your own or <a role="button" class="btn btn-outline-danger mb-2"
+                                                               href="{% url 'passhome' %}" target="_blank">Generate
+                                a secure passsword</a>{{ form.password1 }}
+                            </div>
+                            <div class="form-group mt-2 mb-2">
+                                (Confirm): {{ form.password2 }}
+                            </div>
                             <button type="submit" class="btn btn-success">Sign up!</button>
                         </form>
                     </div>
                     <hr>
-                    <p class="lead">Already have an account? <a href="{% url 'loginuser' %}" class="text-decoration-none">Login</a></p>
+                    <p class="lead">Already have an account? <a href="{% url 'loginuser' %}"
+                                                                class="text-decoration-none">Login</a></p>
                 </div>
             </div>
         </div>
