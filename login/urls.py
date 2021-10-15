@@ -19,18 +19,12 @@ from django.urls import path, include  # Added include module
 from django.conf import settings
 from django.conf.urls.static import static
 
-from passwordGenerator import views
-
 urlpatterns = [
 
-    # Password Generator URLs
-    path('choosepassword', views.passhome, name='passhome'),
-    path('generatedpassword/', views.password, name='password'),
-
-    path('admin/', admin.site.urls), # Django-Admin
+    path('admin/', admin.site.urls),  # Django-Admin
     path('', include('account.urls')),  # Added account app
+    path('passwordGenerator/', include('passwordGenerator.urls'), name='passwordGenerator'),  # Added passwords app
     path('userprofile/', include('userprofile.urls'), name='userprofile'),  # Added user profile app
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
