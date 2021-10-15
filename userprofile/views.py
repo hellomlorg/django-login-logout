@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
@@ -21,6 +22,7 @@ def userprofile(request, username):
         return HttpResponse('No Such User')
 
 
+@login_required
 def saveProfile(request):
     if request.method == "POST":
         profile = Profile.objects.get(user=request.user)
