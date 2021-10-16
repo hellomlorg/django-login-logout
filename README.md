@@ -3,10 +3,11 @@ In this project, we implement a simple user authentication system by using the D
 1. New user registration
 2. User login
 3. Logout
-4. Dynamic Home Page 
+4. Dynamic home page 
 5. Change password for existing user
 6. Recommend secure password to user while signing up
-7. Dynamic profile page for each user - profile includes username, details, profile image and bio 
+7. Dynamic profile page for each user - profile includes username, details, display picture and bio 
+8. Edit/Update profile (display picture, bio) for logged-in user
 
 For more details on this, you can check out our [blog post](https://helloml.org/implementing-a-user-registration-system-in-django-sign-up-login-and-logout/) on [hello ML](https://helloml.org). 
 
@@ -15,7 +16,7 @@ For more details on this, you can check out our [blog post](https://helloml.org/
 ```bash
 git clone https://github.com/hellomlorg/django-login-logout.git
 ```
-2. Create a virtual environment and activate it. Not required by highly recommended. 
+2. Create a virtual environment and activate it. Not required but highly recommended. 
 ```bash
 python -m venv env
 .\env\Scripts\activate
