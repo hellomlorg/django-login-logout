@@ -15,14 +15,16 @@ Including another URLconf
 """
 # Login/urls.py
 from django.contrib import admin
-from django.urls import path, include # Added include module
-from passwordGenerator import views
+from django.urls import path, include  # Added include module
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
-    path('choosepassword', views.passhome, name='passhome'),
-    path('generatedpassword/', views.password, name='password'),
 
-    path('admin/', admin.site.urls),
-    path('', include('account.urls')), # Added account app
+    path('admin/', admin.site.urls),  # Django-Admin
+    path('', include('account.urls')),  # Added account app
+    path('passwordGenerator/', include('passwordGenerator.urls'), name='passwordGenerator'),  # Added passwords app
+    path('userprofile/', include('userprofile.urls'), name='userprofile'),  # Added user profile app
 
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
